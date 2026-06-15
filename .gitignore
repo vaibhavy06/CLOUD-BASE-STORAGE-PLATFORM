@@ -1,0 +1,30 @@
+# Build and Dependency directories
+node_modules/
+.next/
+out/
+build/
+main
+main.exe
+
+# Local environmental configs
+*.env
+*.env.local
+.env*.local
+
+# Logs
+logs/
+*.log
+backend/logs/
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db

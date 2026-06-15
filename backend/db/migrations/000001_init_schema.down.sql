@@ -1,0 +1,29 @@
+DROP INDEX IF EXISTS idx_notifications_user_unread;
+DROP INDEX IF EXISTS idx_activities_file;
+DROP INDEX IF EXISTS idx_activities_user;
+DROP INDEX IF EXISTS idx_shares_folder;
+DROP INDEX IF EXISTS idx_shares_file;
+DROP INDEX IF EXISTS idx_shares_token;
+DROP INDEX IF EXISTS idx_versions_file;
+DROP INDEX IF EXISTS idx_files_deleted;
+DROP INDEX IF EXISTS idx_files_hash;
+DROP INDEX IF EXISTS idx_files_user_folder;
+DROP INDEX IF EXISTS idx_folders_user_parent;
+DROP INDEX IF EXISTS idx_sessions_token;
+DROP INDEX IF EXISTS idx_users_email;
+
+DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS notifications;
+DROP TABLE IF EXISTS activities;
+DROP TABLE IF EXISTS shares;
+DROP TABLE IF EXISTS chunks;
+DROP TABLE IF EXISTS file_versions;
+DROP TABLE IF EXISTS files;
+DROP TABLE IF EXISTS folders;
+DROP TABLE IF EXISTS role_permissions;
+DROP TABLE IF EXISTS user_roles;
+DROP TABLE IF EXISTS permissions;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS users;
+
+DROP EXTENSION IF EXISTS "uuid-ossp";
