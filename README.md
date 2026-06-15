@@ -57,17 +57,6 @@ graph TD
 - **AI/LLM**: Ollama (`qwen2:1.5b`), Tesseract OCR CLI
 - **Monitoring**: Prometheus, Grafana Loki, Promtail, Grafana Dashboards
 
----
-
-## 📋 System Design Interview Talking Points
-
-1. **How do you handle memory when merging 5GB files?**
-   - *Answer*: Traditional servers download all chunks to local disk or memory before uploading. We streams chunks on-the-fly directly from storage back to storage. By chaining Go's `io.Reader` interfaces into a single `io.MultiReader`, we keep heap consumption constant (<50MB) regardless of file size.
-2. **How is Cache Invalidation structured?**
-   - *Answer*: We use a deterministic key namespace format `dir_cache:user_id:folder_id`. When a resource is modified, we lookup its `folder_id` in Postgres (using transaction `RETURNING` clauses where possible) and execute a synchronous Redis `DEL`. For moving files/folders, we invalidate both source and target folder caches.
-
----
-
 ## 🚀 Getting Started (Run Locally)
 
 ### Prerequisites
